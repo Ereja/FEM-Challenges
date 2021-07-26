@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+// fonts
+@mixin lexend400 {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+}
+
+@mixin shoulders700 {
+  font-family: "Big Shoulders Display", cursive;
+  font-weight: 700;
+}
+
+// background and padding for containers
+@mixin backround-padding($color, $hover-color) {
+  background: $color;
+  padding: 3rem 2rem;
+
+  button {
+    color: $color;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}
+
+// flexbox
+@mixin flex-display {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
