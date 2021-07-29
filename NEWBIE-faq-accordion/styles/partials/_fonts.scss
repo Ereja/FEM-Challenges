@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+@mixin bold-titles {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 700;
+}
+
+@mixin texts-regular {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+}

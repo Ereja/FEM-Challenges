@@ -1,0 +1,182 @@
+@use "./partials/variables";
+@use "./partials/fonts";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(variables.$soft-violet, variables.$soft-blue)
+    no-repeat fixed;
+}
+
+.faq-accordion-container {
+  margin: 11rem auto 0px auto;
+  padding: 0rem 1.5rem;
+  width: 375px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+  &__desktop__images,
+  &__block {
+    display: none;
+  }
+
+  &__mobile__images {
+    position: absolute;
+    background: url("../images/bg-pattern-mobile.svg") center bottom no-repeat;
+    background-size: contain;
+    top: -115px;
+
+    &__computer {
+      margin-left: -2rem;
+      margin-bottom: 0.7rem;
+      width: 280px;
+    }
+  }
+}
+
+.faq-accordion-container__info {
+  background: #fff;
+  border-radius: 25px;
+  padding: 8rem 2rem 3rem;
+  color: variables.$dark-grey;
+  margin-bottom: 1rem;
+
+  h1 {
+    @include fonts.bold-titles;
+    text-align: center;
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+
+  h2 {
+    @include fonts.texts-regular;
+    font-size: 1rem;
+
+    &:hover {
+      cursor: pointer;
+      color: variables.$soft-red;
+    }
+  }
+
+  p {
+    @include fonts.texts-regular;
+    color: variables.$grey-blue;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    padding: 0.6rem 0;
+    display: none;
+  }
+
+  img {
+    width: 8px;
+    height: 8px;
+  }
+
+  &__details {
+    border-bottom: 1px solid variables.$light-grayish-blue;
+    padding-bottom: 1rem;
+  }
+
+  &__details__question {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+}
+
+.show-answer {
+  h2 {
+    font-weight: 700;
+  }
+
+  p {
+    display: block;
+  }
+
+  img {
+    transform: scaleY(-1);
+  }
+}
+
+.attribution {
+  font-size: 1rem;
+  text-align: center;
+  @include fonts.texts-regular;
+  color: variables.$light-grayish-blue;
+}
+.attribution a {
+  cursor: pointer;
+  color: variables.$soft-red;
+}
+
+@media (min-width: 1200px) {
+  .faq-accordion-container {
+    margin: 10rem auto 0rem auto;
+    padding: 0;
+    width: 900px;
+    flex-direction: row;
+
+    &__mobile__images {
+      display: none;
+    }
+
+    &__block {
+      display: block;
+      position: absolute;
+      top: 300px;
+      right: 810px;
+      z-index: 999;
+    }
+
+    &__desktop__images {
+      display: block;
+      position: absolute;
+      background: url("../images/bg-pattern-desktop.svg") no-repeat;
+      background-position: -475px -150px;
+      background-size: 100%, 200%;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+
+      &__computer {
+        position: relative;
+        right: 100px;
+        top: 150px;
+        width: 525px;
+      }
+    }
+  }
+
+  .faq-accordion-container__info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 5rem auto;
+    padding: 4rem 4rem 4rem 29rem;
+    color: variables.$dark-grey;
+
+    &__details {
+      z-index: 500;
+    }
+
+    h1 {
+      text-align: left;
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
